@@ -28,3 +28,9 @@ style	Formato/estilo (no afecta lógica)	style: formatear código con black
 refactor	Refactorización (mejorar código)	refactor: simplificar lógica de búsqueda
 test	Agregar o modificar tests	test: agregar pruebas para endpoint de búsqueda
 chore	Tareas de mantenimiento	chore: actualizar requirements.txt
+
+# Ver todos los commits con sus IDs
+git log --oneline
+
+# Ver más detalles
+git log --oneline --graph --all
