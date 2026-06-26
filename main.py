@@ -31,6 +31,12 @@ def crear_usuario(nombre: str, email: str):
     usuarios.append(nuevo)
     return nuevo
 
+@app.get("/usuarios/buscar")
+def buscar_usuario(nombre: str):
+    """Buscar usuarios por nombre"""
+    resultados = [u for u in usuarios if nombre.lower() in u["nombre"].lower()]
+    return {"resultados": resultados, "total": len(resultados)}
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True)
