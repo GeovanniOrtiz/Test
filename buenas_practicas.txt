@@ -34,3 +34,6 @@ git log --oneline
 
 # Ver más detalles
 git log --oneline --graph --all
+
+# Moverse a la version deseada
+git checkout ID
