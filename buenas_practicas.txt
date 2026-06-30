@@ -17,8 +17,8 @@ git push
 
 # 7. Ver en GitHub que se actualizó
 
+#### Guía de buenas prácticas para mensajes de commit
 
-📋 Guía de buenas prácticas para mensajes de commit
 Tipos de commits (conventional commits):
 Tipo	Uso	Ejemplo
 feat	Nueva funcionalidad	feat: agregar endpoint para eliminar usuario
@@ -37,3 +37,26 @@ git log --oneline --graph --all
 
 # Moverse a la version deseada
 git checkout ID
+
+# Le estás diciendo a Git: "Toma el commit donde estoy ahora (HEAD) y súbelo a la rama main del remoto origin".
+git push origin HEAD:main
+#--------------------->Como tu commit 234e569 está justo por encima de 025fe47 (que es el origin/main que tienes guardado), esto hará un avance rápido (fast-forward) y se subirá sin problemas.
+
+# Creas una rama llamada 'mi-rama' y te mueves a ella
+git switch -c mi-rama
+
+# Ahora sí, subes esa rama al remoto
+git push -u origin mi-rama
+
+
+#----------> Si quieres que tu rama main local quede actualizada con este cambio antes de subir:
+# Vuelves a la rama main
+git checkout main
+
+# Traes el commit (lo fusionas)
+git merge 234e569
+
+# Ahora sí, haces push normal
+git push
+
+# Actualiza 
